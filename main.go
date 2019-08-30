@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"time"
 
 	"github.com/brianvoe/gofakeit"
 	r "gopkg.in/rethinkdb/rethinkdb-go.v5"
@@ -23,6 +24,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+		time.Sleep(time.Millisecond * 200)
 
 	}
 
