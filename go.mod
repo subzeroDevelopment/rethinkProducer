@@ -2,4 +2,7 @@ module github.com/subzeroDevelopment/rethinkProducer
 
 go 1.12
 
-require gopkg.in/rethinkdb/rethinkdb-go.v5 v5.0.1
+require (
+	github.com/brianvoe/gofakeit v3.18.0+incompatible // indirect
+	gopkg.in/rethinkdb/rethinkdb-go.v5 v5.0.1
+)

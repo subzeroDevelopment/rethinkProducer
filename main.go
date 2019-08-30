@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/brianvoe/gofakeit"
 	r "gopkg.in/rethinkdb/rethinkdb-go.v5"
 )
 
@@ -13,12 +14,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = r.DB("nitifications").Table("message").Insert(map[string]string{
-		"msg":  "Hellow world from go",
-		"name": "Oribe",
-	},
-	).Exec(session)
-	if err != nil {
-		log.Fatal(err)
+	for {
+		err = r.DB("nitifications").Table("message").Insert(map[string]string{
+			"msg":  gofakeit.HackerPhrase(),
+			"name": gofakeit.Name(),
+		},
+		).Exec(session)
+		if err != nil {
+			log.Fatal(err)
+		}
+
 	}
+
 }
